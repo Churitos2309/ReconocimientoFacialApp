@@ -1,5 +1,7 @@
+// Importa el paquete necesario de Flutter.
 import 'package:flutter/material.dart';
 
+// Definición de la clase HomePage, que extiende StatefulWidget.
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -7,7 +9,9 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+// Definición del estado asociado a HomePage.
 class _HomePageState extends State<HomePage> {
+  // Lista de imágenes de perfil.
   List<String> profileImages = [
     "images/1.jpg",
     "images/2.jpeg",
@@ -19,6 +23,7 @@ class _HomePageState extends State<HomePage> {
     "images/8.jpeg",
   ];
 
+  // Lista de imágenes de publicaciones.
   List<String> posts = [
     "images/post_1.jpeg",
     "images/post_2.jpeg",
@@ -30,13 +35,16 @@ class _HomePageState extends State<HomePage> {
     "images/post_8.jpeg",
   ];
 
-  Future<void> onRefresh()async{
+  // Función asincrónica que simula una acción de refresco.
+  Future<void> onRefresh() async {
     await Future.delayed(const Duration(seconds: 1));
   }
 
   @override
   Widget build(BuildContext context) {
+    // Retorna un Scaffold que contiene la estructura básica de la página.
     return Scaffold(
+      // Barra de la aplicación (AppBar) con iconos de acción.
       appBar: AppBar(
         title: Image.asset(
           "images/insta_title.png",
@@ -57,12 +65,13 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      // Cuerpo de la página con un RefreshIndicator para refrescar el contenido.
       body: RefreshIndicator(
         onRefresh: onRefresh,
         child: SingleChildScrollView(
           child: Column(
             children: [
-              //STORY
+              // Sección de historias (STORY).
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -72,6 +81,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.all(10),
                       child: Column(
                         children: [
+                          // Imagen de perfil en un círculo.
                           CircleAvatar(
                             radius: 35,
                             backgroundImage:
@@ -86,6 +96,7 @@ class _HomePageState extends State<HomePage> {
                           const SizedBox(
                             height: 10,
                           ),
+                          // Nombre del perfil.
                           const Text(
                             "profile name",
                             style: TextStyle(
@@ -100,13 +111,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const Divider(),
+              // Sección de publicaciones.
               Column(
                 children: List.generate(
                   8,
                   (index) => Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      //HEADER POST
+                      // Encabezado de la publicación (HEADER POST).
                       Row(
                         children: [
                           Container(
@@ -124,17 +136,16 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           const Text('Profile Name'),
-                          // ignore: prefer_const_constructors
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
                             icon: const Icon(Icons.more_vert),
                             onPressed: () {},
                           )
                         ],
                       ),
-                      //IMAGE POST
+                      // Imagen de la publicación (IMAGE POST).
                       Image.asset(posts[index]),
-                      //FOOTER POST
+                      // Pie de la publicación (FOOTER POST) con iconos de interacción.
                       Row(
                         children: [
                           IconButton(
@@ -156,9 +167,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
+                      // Descripción y comentarios de la publicación.
                       Container(
-                        // ignore: prefer_const_constructors
-                        padding: EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(15),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -195,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   TextSpan(
                                     text:
-                                        " This is the most azaming picture ever put on Instagram. This is also the best course ever made!",
+                                        " This is the most amazing picture ever put on Instagram. This is also the best course ever made!",
                                   ),
                                 ],
                               ),
