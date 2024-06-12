@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:reconocimiento_app/device/camera_open.dart';
+import 'package:reconocimiento_app/ui/pages/history/history_page.dart';
 import 'package:reconocimiento_app/ui/pages/home/post_section.dart';
 import 'package:reconocimiento_app/ui/pages/home/story_section.dart';
+import 'package:reconocimiento_app/ui/pages/objets/objets_page.dart';
+import 'package:reconocimiento_app/ui/pages/profile/profile_page.dart';
 import 'package:reconocimiento_app/ui/pages/search/search_page.dart';
 import 'package:reconocimiento_app/ui/widgets/buttom_navigation.dart';
 
@@ -22,7 +26,12 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> pages = [
     const HomePage(),
     const SearchPage(),
-    // Agrega más paginas aqui si es necesario.
+    const ObjetsPage(),
+    const CameraOpen(),
+    const HistoryPage(),
+    const ProfilePage(),
+
+    // Agrega mas paginas aqui si es necesario.
   ];
 
   // Funcion que se llama cuando se selecciona una pagina en la barra de navegacion.
@@ -47,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Definición de la clase HomePage, que extiende StatelessWidget.
+// Definicion de la clase HomePage, que extiende StatelessWidget.
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -76,7 +85,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      // Cuerpo de la página con un RefreshIndicator para refrescar el contenido.
+      // Cuerpo de la pagina con un RefreshIndicator para refrescar el contenido.
       body: RefreshIndicator(
         onRefresh: () async {
           await Future.delayed(const Duration(seconds: 1));
@@ -84,10 +93,10 @@ class HomePage extends StatelessWidget {
         child: const SingleChildScrollView(
           child: Column(
             children: [
-              // Sección de historias.
+              // Seccion de historias.
               StorySection(),
               Divider(),
-              // Sección de publicaciones.
+              // Seccion de publicaciones.
               PostSection(),
             ],
           ),

@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 class BottomNavigation extends StatelessWidget {
   // Define las propiedades de la clase.
   final int currentPage; // Indice de la pagina actual.
-  final ValueChanged<int> onPageSelected; // Funcion llamada cuando se selecciona una pagina.
+  final ValueChanged<int>
+      onPageSelected; // Funcion llamada cuando se selecciona una pagina.
 
   // Constructor de la clase BottomNavigation.
-  const BottomNavigation({super.key, required this.currentPage, required this.onPageSelected});
+  const BottomNavigation(
+      {super.key, required this.currentPage, required this.onPageSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,8 @@ class BottomNavigation extends StatelessWidget {
                   ? const Color.fromRGBO(203, 73, 101, 1) // Color activo.
                   : const Color.fromRGBO(40, 40, 40, 1), // Color inactivo.
             ),
-            onPressed: () => onPageSelected(0), // Llama a la función onPageSelected cuando se presiona el boton.
+            onPressed: () => onPageSelected(
+                0), // Llama a la función onPageSelected cuando se presiona el boton.
           ),
           const Spacer(), // Añade un espacio entre los iconos.
           // Icono de búsqueda con un IconButton.
@@ -37,13 +40,14 @@ class BottomNavigation extends StatelessWidget {
                   ? const Color.fromRGBO(203, 73, 101, 1) // Color activo.
                   : const Color.fromRGBO(40, 40, 40, 1), // Color inactivo.
             ),
-            onPressed: () => onPageSelected(1), // Llama a la funcion onPageSelected cuando se presiona el boton.
+            onPressed: () => onPageSelected(
+                1), // Llama a la funcion onPageSelected cuando se presiona el boton.
           ),
           const Spacer(), // Añade un espacio entre los iconos.
           // Icono de video bajo demanda con un IconButton.
           IconButton(
             icon: Icon(
-              Icons.ondemand_video,
+              Icons.inbox,
               // Cambia el color del icono segun si currentPage es igual a 2.
               color: currentPage == 2
                   ? const Color.fromRGBO(203, 73, 101, 1) // Color activo.
@@ -55,13 +59,24 @@ class BottomNavigation extends StatelessWidget {
           // Icono de viaje con un IconButton.
           IconButton(
             icon: Icon(
-              Icons.card_travel,
-              // Cambia el color del icono segun si currentPage es igual a 3.
+              Icons.camera,
               color: currentPage == 3
+                  ? const Color.fromRGBO(203, 73, 101, 1)
+                  : const Color.fromRGBO(40, 40, 40, 1),
+            ),
+            onPressed: () => onPageSelected(3),
+          ),
+          const Spacer(), // Añade un espacio entre los iconos.
+          IconButton(
+            icon: Icon(
+              Icons.history,
+              // Cambia el color del icono segun si currentPage es igual a 3.
+              color: currentPage == 4
                   ? const Color.fromRGBO(203, 73, 101, 1) // Color activo.
                   : const Color.fromRGBO(40, 40, 40, 1), // Color inactivo.
             ),
-            onPressed: () => onPageSelected(3), // Llama a la funcion onPageSelected cuando se presiona el boton.
+            onPressed: () => onPageSelected(
+                4), // Llama a la funcion onPageSelected cuando se presiona el boton.
           ),
           const Spacer(), // Añade un espacio entre los iconos.
           // Icono de perfil con un IconButton.
@@ -69,13 +84,14 @@ class BottomNavigation extends StatelessWidget {
             icon: Icon(
               Icons.person,
               // Cambia el color del icono segun si currentPage es igual a 4.
-              color: currentPage == 4
+              color: currentPage == 5
                   ? const Color.fromRGBO(203, 73, 101, 1) // Color activo.
                   : const Color.fromRGBO(40, 40, 40, 1), // Color inactivo.
             ),
-            onPressed: () => onPageSelected(4), // Llama a la funcion onPageSelected cuando se presiona el boton.
+            onPressed: () => onPageSelected(
+                5), // Llama a la funcion onPageSelected cuando se presiona el boton.
           ),
-          const Spacer(), // Añade un espacio entre los iconos.
+          const Spacer(),
         ],
       ),
     );
