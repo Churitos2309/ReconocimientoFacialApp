@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reconocimiento_app/device/camera_open.dart';
+import 'package:reconocimiento_app/ui/pages/camera/camera_page.dart';
 import 'package:reconocimiento_app/ui/pages/history/history_page.dart';
 import 'package:reconocimiento_app/ui/pages/home/post_section.dart';
 import 'package:reconocimiento_app/ui/pages/home/story_section.dart';
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const HomePage(),
     const SearchPage(),
     const ObjetsPage(),
-    const CameraOpen(),
+    const CameraPage(),
     const HistoryPage(),
     const ProfilePage(),
 
