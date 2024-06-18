@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reconocimiento_app/ui/pages/home/home_page.dart';
+import 'package:reconocimiento_app/ui/pages/login/login_screen.dart';
+import 'package:reconocimiento_app/ui/pages/register/register_screen.dart';
 
 // Punto de entrada de la aplicacion.
 void main() {
@@ -38,7 +40,11 @@ class MyApp extends StatelessWidget {
       ),
       // Establece la pagina de inicio de la aplicacion como MyHomePage.
       // Este widget sera la pantalla principal que se muestra cuando la aplicación se inicia.
-      home: const MyHomePage(),
+      home: const RegisterScreen(),
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/home': (context) => const MyHomePage(),
+      },
     );
   }
 }

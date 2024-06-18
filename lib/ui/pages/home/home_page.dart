@@ -5,6 +5,7 @@ import 'package:reconocimiento_app/ui/pages/home/post_section.dart';
 import 'package:reconocimiento_app/ui/pages/home/story_section.dart';
 import 'package:reconocimiento_app/ui/pages/objets/objets_page.dart';
 import 'package:reconocimiento_app/ui/pages/profile/profile_page.dart';
+import 'package:reconocimiento_app/ui/pages/report/report_page.dart';
 import 'package:reconocimiento_app/ui/pages/search/search_page.dart';
 import 'package:reconocimiento_app/ui/widgets/buttom_navigation.dart';
 
@@ -30,6 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const CameraPage(),
     const HistoryPage(),
     const ProfilePage(),
+    const ReportPage(),
 
     // Agrega mas paginas aqui si es necesario.
   ];

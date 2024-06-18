@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reconocimiento_app/ui/pages/profile/card_carnet.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -21,12 +22,7 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(10),
-        child: Center(
-          child: Text('Profile User'),
-        ),
-      ),
+      body: const CardCarnet()
     );
   }
 }

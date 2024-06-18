@@ -53,7 +53,8 @@ class BottomNavigation extends StatelessWidget {
                   ? const Color.fromRGBO(203, 73, 101, 1) // Color activo.
                   : const Color.fromRGBO(40, 40, 40, 1), // Color inactivo.
             ),
-            onPressed: () => onPageSelected(2), // Llama a la funcion onPageSelected cuando se presiona el boton.
+            onPressed: () => onPageSelected(
+                2), // Llama a la funcion onPageSelected cuando se presiona el boton.
           ),
           const Spacer(), // Añade un espacio entre los iconos.
           // Icono de viaje con un IconButton.
@@ -90,6 +91,18 @@ class BottomNavigation extends StatelessWidget {
             ),
             onPressed: () => onPageSelected(
                 5), // Llama a la funcion onPageSelected cuando se presiona el boton.
+          ),
+          const Spacer(),
+          IconButton(
+            icon: Icon(
+              Icons.report,
+              // Cambia el color del icono segun si currentPage es igual a 4.
+              color: currentPage == 6
+                  ? const Color.fromRGBO(203, 73, 101, 1) // Color activo.
+                  : const Color.fromRGBO(40, 40, 40, 1), // Color inactivo.
+            ),
+            onPressed: () => onPageSelected(
+                6), // Llama a la funcion onPageSelected cuando se presiona el boton.
           ),
           const Spacer(),
         ],
